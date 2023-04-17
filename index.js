@@ -66,4 +66,15 @@ function writeToFile(data) {
     });
 };
 
+function createShape(data) {
+    if (data.shape === "square") {
+        return new shapes.Square(data.text, data.textColor, data.shapeColor);
+    } else if (data.shape === "circle") {
+        return new shapes.Circle(data.text, data.textColor, data.shapeColor);
+    } else if (data.shape === "triangle") {
+        return new shapes.Triangle(data.text, data.textColor, data.shapeColor);
+    }
+};
+
+
 
