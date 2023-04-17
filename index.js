@@ -58,3 +58,12 @@ const questions = [
     }
 ];
 
+
+function writeToFile(data) {
+  
+    fs.writeFile("logo.svg", data, function (err) {
+      err ? console.log(err) : console.log('Successfully generated logo.svg!')
+    });
+};
+
+
