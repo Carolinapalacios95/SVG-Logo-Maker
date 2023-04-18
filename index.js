@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const shapes = require("./lib/shapes.js");
+const Shape = require("./lib/shapes.js");
 
 
 const questions = [
@@ -9,7 +9,7 @@ const questions = [
         name: "text",
         message: "Please enter up to 3 characters for your logo.",
         validate: textInput => {
-            if ((textInput) && (textInput <= 3)) {
+            if ((textInput) && (textInput.length <= 3)) {
                 return true;
             } else {
                 console.log("Please enter up to 3 characters for your logo.")
@@ -69,11 +69,11 @@ function writeToFile(data) {
 
 function createShape(data) {
     if (data.shape === "square") {
-        return new shapes.Square(data.text, data.textColor, data.shapeColor);
+        return new Shape.Square(data.text, data.textColor, data.shapeColor);
     } else if (data.shape === "circle") {
-        return new shapes.Circle(data.text, data.textColor, data.shapeColor);
+        return new Shape.Circle(data.text, data.textColor, data.shapeColor);
     } else if (data.shape === "triangle") {
-        return new shapes.Triangle(data.text, data.textColor, data.shapeColor);
+        return new Shape.Triangle(data.text, data.textColor, data.shapeColor);
     }
 };
 
