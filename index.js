@@ -1,8 +1,11 @@
+// Imports Inquirer (node package manager)
 const inquirer = require("inquirer");
+// Imports File system module (node package manager)
 const fs = require("fs");
+// Imports classes from shapes.js file
 const Shape = require("./lib/shapes.js");
 
-
+// Array that holds the questions to be prompted to the user
 const questions = [
     {
         type: "input",
@@ -59,7 +62,7 @@ const questions = [
     }
 ];
 
-
+// Function that writes an SVG file using user input from inquirer prompts
 function writeToFile(data) {
   
     fs.writeFile("logo.svg", data, function (err) {
@@ -67,6 +70,7 @@ function writeToFile(data) {
     });
 };
 
+// Function that creates a shape based on a user's input
 function createShape(data) {
     if (data.shape === "square") {
         return new Shape.Square(data.text, data.textColor, data.shapeColor);
@@ -77,6 +81,7 @@ function createShape(data) {
     }
 };
 
+// Function that initializes the app
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
@@ -86,6 +91,7 @@ function init() {
     });
 };
 
+// A call to the initialize app function
 init();
 
 
