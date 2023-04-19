@@ -54,7 +54,7 @@ In order to run the SVG Logo generator, the user will need to type `node index.j
 
 ## Contributing
 
-Currently not accepting contributions to this project.
+Not currently accepting contributions to this project.
 
 ## Tests
 
